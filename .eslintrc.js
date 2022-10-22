@@ -1,16 +1,18 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
   },
-  extends: 'standard-with-typescript',
+  extends: 'airbnb-base',
   overrides: [
   ],
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    sourceType: 'module',
   },
   rules: {
-    "linebreak-style": ["error", "windows"]
-  }
-}
+    "linebreak-style": ["error", "windows"],
+    "indent": ["error", 4],
+    'no-plusplus': 'off',
+  },
+};
