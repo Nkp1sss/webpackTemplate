@@ -36,6 +36,8 @@
   },
   "dependencies": {
     "copy-webpack-plugin": "^11.0.0",
-    "ejs": "^3.1.8"
+    "ejs": "^3.1.8",
+    "eslint-config-airbnb": "^19.0.4",
+    "normalize.css": "^8.0.1"
   }
 }
