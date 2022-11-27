@@ -1,3 +1,3 @@
 export function doSomething() {
-    return 123;
+    console.log('I do something and i from ./scripts/module');
 }
