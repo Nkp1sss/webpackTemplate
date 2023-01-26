@@ -18,14 +18,9 @@ if (process.env.NODE_ENV === 'production') {
 console.log(mode + ' mode');
 
 const config = {
-    entry: { 
-        // точка входа, какие скрипты вставлять
-        index: './src/index.js',
-        /**
-         * можно подключать даже ts файлы,
-         * вебпак сам создаст в итоге js файл.
-         *  */
-        // main: './src/main.ts',
+    entry: {
+        // index: './src/index.js',
+        main: './src/main.ts',
     },
     devtool: 'source-map', // отображение страницы в браузере как в VSCode
     output: {
@@ -42,16 +37,15 @@ const config = {
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: './src/index.html',
-            chunks: ['index'], // какие скрипты подключать к странице
+            chunks: ['main'],
             inject: 'body', // вставить скрипт в конец тега body
-            // minify: false,  отменить минификацию
         }),
         new CopyPlugin({
             patterns: [
                 { from: "./src/assets", to: "assets" },
             ],
         }),
-        // new CleanWebpackPlugin(), очищает всю папку dist при запуске лайв сервера
+        new CleanWebpackPlugin(),
     ],
     module: {
         rules: [
